@@ -13,7 +13,7 @@ function readStoredMode(): ThemeMode {
 }
 
 export function useThemeMode() {
-  const [mode, setModeState] = useState<ThemeMode>(readStoredMode)
+  const [mode, setMode] = useState<ThemeMode>(readStoredMode)
   const [systemPrefersLight, setSystemPrefersLight] = useState(() =>
     typeof window !== 'undefined' && window.matchMedia
       ? window.matchMedia('(prefers-color-scheme: light)').matches
@@ -28,8 +28,8 @@ export function useThemeMode() {
     return () => mql.removeEventListener('change', listener)
   }, [])
 
-  const setMode = (next: ThemeMode) => {
-    setModeState(next)
+  const setModeState = (next: ThemeMode) => {
+    setMode(next)
     if (typeof window !== 'undefined') {
       window.localStorage.setItem(STORAGE_KEY, next)
     }
@@ -38,5 +38,5 @@ export function useThemeMode() {
   const effectiveTheme: EffectiveTheme =
     mode === 'auto' ? (systemPrefersLight ? 'light' : 'dark') : mode
 
-  return { mode, setMode, effectiveTheme }
+  return { mode, setModeState, effectiveTheme }
 }

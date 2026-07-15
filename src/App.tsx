@@ -11,7 +11,7 @@ import { parseLocalDate } from './lib/date'
 import { computeDueDate, computeReportWindow, computeReportStatus } from './lib/reportStatus'
 
 function App() {
-  const { mode, setMode, effectiveTheme } = useThemeMode()
+  const { mode, setModeState, effectiveTheme } = useThemeMode()
   const now = useNow()
   const [entryDate, setEntryDate] = useState('')
   const [dueDateInput, setDueDateInput] = useState('')
@@ -35,7 +35,7 @@ function App() {
     >
       <div className="min-h-screen w-full bg-[radial-gradient(circle_at_20%_0%,#EEEEEE,#dfe6e8_70%)] px-5 pt-8 pb-[60px] font-sans text-neutral-900 antialiased transition-colors dark:bg-[radial-gradient(circle_at_20%_0%,#171b22,#222831_70%)] dark:text-neutral-100">
         <div className="relative mx-auto max-w-[620px]">
-          <ThemeSwitcher mode={mode} onChange={setMode} />
+          <ThemeSwitcher mode={mode} onChange={setModeState} />
 
           <header className="mb-7 pt-14 text-center">
             <h1 className="mb-2 text-2xl font-semibold tracking-tight">90-Day Report Tracker</h1>
