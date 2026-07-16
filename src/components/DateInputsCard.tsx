@@ -20,7 +20,7 @@ export function DateInputsCard({
   onEntryDateChange,
   onDueDateInputChange,
   onClear,
-}: DateInputsCardProps) {
+}: Readonly<DateInputsCardProps>) {
   const entryFilled = !!entryDate
   const dueFilled = !!dueDateInput
 

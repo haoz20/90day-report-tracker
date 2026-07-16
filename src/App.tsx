@@ -38,7 +38,7 @@ function App() {
           <ThemeSwitcher mode={mode} onChange={setModeState} />
 
           <header className="mb-7 pt-14 text-center">
-            <h1 className="mb-2 text-2xl font-semibold tracking-tight">90-Day Report Tracker</h1>
+            <h1 className="mb-2 text-2xl font-semibold tracking-tight">Thailand 90-Day Report Tracker</h1>
             <p className="m-0 text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
               Calculate and track your Thailand 90-day address reporting deadline.
             </p>
