@@ -12,12 +12,12 @@ const RULES = [
 export function RulesCard() {
   return (
     <Card title="Rules of the 90-day report">
-      <ul className="m-0 list-disc space-y-1 pl-4.5 text-[0.88rem] leading-relaxed text-neutral-800 dark:text-neutral-100">
+      <ul className="m-0 list-disc space-y-1 pl-4.5 text-[0.88rem] leading-relaxed text-ink dark:text-mist">
         {RULES.map((rule) => (
           <li key={rule}>{rule}</li>
         ))}
       </ul>
-      <p className="mt-4 border-t border-black/8 pt-3.5 text-xs leading-relaxed text-neutral-500 italic dark:border-white/12 dark:text-neutral-400">
+      <p className="mt-4 border-t border-ink/8 pt-3.5 text-xs leading-relaxed text-ink/60 italic dark:border-mist/12 dark:text-mist/60">
         This is a planning tool only — always confirm your exact due date on your TM.47 receipt.
       </p>
     </Card>

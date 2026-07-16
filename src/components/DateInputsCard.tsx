@@ -9,10 +9,10 @@ interface DateInputsCardProps {
 }
 
 const inputClassName =
-  'w-full rounded-[14px] border border-black/12 bg-white/60 px-3.5 py-3 font-sans text-sm text-neutral-900 outline-none dark:border-white/15 dark:bg-white/5 dark:text-neutral-100'
+  'w-full rounded-[14px] border border-ink/12 bg-mist/60 px-3.5 py-3 font-sans text-sm text-ink outline-none dark:border-mist/15 dark:bg-slate/30 dark:text-mist'
 
 const labelClassName =
-  'text-xs font-semibold tracking-wide text-neutral-500 uppercase dark:text-neutral-400'
+  'text-xs font-semibold tracking-wide text-ink/60 uppercase dark:text-mist/60'
 
 export function DateInputsCard({
   entryDate,
@@ -40,7 +40,7 @@ export function DateInputsCard({
             className={inputClassName}
           />
         </div>
-        <div className="text-center text-xs font-semibold tracking-wider text-neutral-500 uppercase dark:text-neutral-400">
+        <div className="text-center text-xs font-semibold tracking-wider text-ink/60 uppercase dark:text-mist/60">
           or
         </div>
         <div className="flex flex-col gap-1.5">
@@ -61,7 +61,7 @@ export function DateInputsCard({
         <button
           type="button"
           onClick={onClear}
-          className="rounded-xl border border-black/12 px-[18px] py-2.5 font-sans text-[0.82rem] font-semibold text-neutral-500 transition-colors hover:text-neutral-700 dark:border-white/15 dark:text-neutral-400 dark:hover:text-neutral-200"
+          className="rounded-xl border border-ink/12 px-[18px] py-2.5 font-sans text-[0.82rem] font-semibold text-ink/60 transition-colors hover:text-ink dark:border-mist/15 dark:text-mist/60 dark:hover:text-mist"
         >
           Clear
         </button>

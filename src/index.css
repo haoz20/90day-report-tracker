@@ -2,6 +2,13 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+@theme {
+  --color-ink: #222831;
+  --color-slate: #393e46;
+  --color-accent: #00adb5;
+  --color-mist: #eeeeee;
+}
+
 :root {
   color-scheme: light dark;
 }
@@ -9,4 +16,16 @@
 body {
   margin: 0;
   min-height: 100vh;
+}
+
+.app-shell {
+  background:
+    radial-gradient(circle at 15% 0%, color-mix(in srgb, var(--color-accent) 14%, transparent), transparent 55%),
+    linear-gradient(135deg, var(--color-mist) 0%, #dcdcdc 50%, var(--color-mist) 100%);
+}
+
+.dark .app-shell {
+  background:
+    radial-gradient(circle at 15% 0%, color-mix(in srgb, var(--color-accent) 20%, transparent), transparent 55%),
+    linear-gradient(135deg, var(--color-ink) 0%, var(--color-slate) 55%, var(--color-ink) 100%);
 }
