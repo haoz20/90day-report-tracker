@@ -18,7 +18,7 @@ const LATE_WINDOW_DAYS = 7
 const REPORT_CYCLE_DAYS = 90
 
 export const TONE_COLORS: Record<ReportTone, string> = {
-  early: '#00ADB5',
+  early: '#00A19C',
   ontime: '#4fbf8f',
   due: '#4fbf8f',
   late: '#e8a33d',

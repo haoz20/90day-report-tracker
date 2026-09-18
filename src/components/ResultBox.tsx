@@ -1,16 +1,18 @@
+import type { ReportTone } from '../lib/reportStatus'
+
 interface ResultBoxProps {
   label: string
   date: string
-  color: string
+  tone: ReportTone
 }
 
-export function ResultBox({ label, date, color }: ResultBoxProps) {
+export function ResultBox({ label, date, tone }: ResultBoxProps) {
   return (
-    <div className="rounded-[14px] border border-ink/12 bg-mist/60 px-2.5 py-3.5 text-center dark:border-mist/15 dark:bg-slate/30">
-      <div className="mb-2 text-[0.68rem] font-semibold tracking-wide text-ink/60 uppercase dark:text-mist/60">
+    <div className="rounded-[14px] border border-ink/18 bg-surface-light px-2.5 py-3.5 text-center dark:border-teal/18 dark:bg-surface-dark">
+      <div className="mb-2 text-[0.68rem] font-semibold tracking-wide text-muted-light uppercase dark:text-muted-dark">
         {label}
       </div>
-      <div className="text-[1.05rem] font-semibold" style={{ color }}>
+      <div className="text-[1.05rem] font-semibold" style={{ color: `var(--tone-${tone}-text)` }}>
         {date}
       </div>
     </div>
