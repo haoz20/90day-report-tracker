@@ -17,7 +17,7 @@ export function ThemeSwitcher({ mode, onChange }: ThemeSwitcherProps) {
           onClick={() => onChange(option)}
           className={`rounded-full px-3 py-1.5 font-sans text-xs font-semibold capitalize transition-colors ${
             mode === option
-              ? 'bg-ink text-teal dark:bg-teal dark:text-ink'
+              ? 'bg-white text-ink shadow-[0_1px_4px_rgba(0,0,0,0.25)] ring-1 ring-ink/15 dark:bg-teal dark:text-ink dark:shadow-none dark:ring-0'
               : 'text-ink/75 hover:text-ink dark:text-teal/75 dark:hover:text-teal'
           }`}
         >

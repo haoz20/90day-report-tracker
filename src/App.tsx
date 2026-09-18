@@ -11,7 +11,7 @@ import { parseLocalDate } from './lib/date'
 import { computeDueDate, computeReportWindow, computeReportStatus } from './lib/reportStatus'
 
 function App() {
-  const { mode, setModeState, effectiveTheme } = useThemeMode()
+  const { mode, setModeState } = useThemeMode()
   const now = useNow()
   const [entryDate, setEntryDate] = useState('')
   const [dueDateInput, setDueDateInput] = useState('')
@@ -29,40 +29,35 @@ function App() {
   }, [])
 
   return (
-    <div
-      className={effectiveTheme === 'dark' ? 'dark' : ''}
-      style={{ colorScheme: effectiveTheme }}
-    >
-      <div className="min-h-screen w-full bg-teal px-5 pt-8 pb-[60px] font-sans text-ink antialiased transition-colors dark:bg-ink dark:text-teal">
-        <div className="relative mx-auto max-w-[620px]">
-          <ThemeSwitcher mode={mode} onChange={setModeState} />
+    <div className="min-h-screen w-full bg-teal px-5 pt-8 pb-[60px] font-sans text-ink antialiased transition-colors dark:bg-ink dark:text-teal">
+      <div className="relative mx-auto max-w-[620px]">
+        <ThemeSwitcher mode={mode} onChange={setModeState} />
 
-          <header className="mb-7 pt-14 text-center">
-            <h1 className="mb-2 text-2xl font-semibold tracking-tight">Thailand 90-Day Report Tracker</h1>
-            <p className="m-0 text-sm leading-relaxed text-muted-light dark:text-muted-dark">
-              Calculate and track your Thailand 90-day address reporting deadline.
-            </p>
-          </header>
+        <header className="mb-7 pt-14 text-center">
+          <h1 className="mb-2 text-2xl font-semibold tracking-tight">Thailand 90-Day Report Tracker</h1>
+          <p className="m-0 text-sm leading-relaxed text-muted-light dark:text-muted-dark">
+            Calculate and track your Thailand 90-day address reporting deadline.
+          </p>
+        </header>
 
-          <DateInputsCard
-            entryDate={entryDate}
-            dueDateInput={dueDateInput}
-            onEntryDateChange={setEntryDate}
-            onDueDateInputChange={setDueDateInput}
-            onClear={handleClear}
-          />
+        <DateInputsCard
+          entryDate={entryDate}
+          dueDateInput={dueDateInput}
+          onEntryDateChange={setEntryDate}
+          onDueDateInputChange={setDueDateInput}
+          onClear={handleClear}
+        />
 
-          {status && <StatusBanner status={status} />}
+        {status && <StatusBanner status={status} />}
 
-          {reportWindow && (
-            <>
-              <KeyDatesCard window={reportWindow} />
-              <TimelineCard window={reportWindow} />
-            </>
-          )}
+        {reportWindow && (
+          <>
+            <KeyDatesCard window={reportWindow} />
+            <TimelineCard window={reportWindow} />
+          </>
+        )}
 
-          <RulesCard />
-        </div>
+        <RulesCard />
       </div>
     </div>
   )
