@@ -1,4 +1,12 @@
-# React + TypeScript + Vite
+# Thailand 90-Day Report Tracker
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ea5de0ce-4884-4141-a4c1-ca4757b4e53f/deploy-status)](https://app.netlify.com/projects/90day-report-tracker/deploys)
+
+Calculate and track your Thailand 90-day address reporting deadline.
+
+## Development
+
+This project is built with React, TypeScript, and Vite.
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 

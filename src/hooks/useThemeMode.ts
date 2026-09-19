@@ -38,5 +38,13 @@ export function useThemeMode() {
   const effectiveTheme: EffectiveTheme =
     mode === 'auto' ? (systemPrefersLight ? 'light' : 'dark') : mode
 
+  useEffect(() => {
+    // Toggled on <html> (not a wrapper element) so portaled content — e.g.
+    // react-aria-components' Popover, which mounts to document.body — still
+    // falls under the `.dark *` selector Tailwind's dark variant relies on.
+    document.documentElement.classList.toggle('dark', effectiveTheme === 'dark')
+    document.documentElement.style.colorScheme = effectiveTheme
+  }, [effectiveTheme])
+
   return { mode, setModeState, effectiveTheme }
 }
