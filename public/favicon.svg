@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="bodyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2de2eb" />
+      <stop offset="100%" stop-color="#008a90" />
+    </linearGradient>
+    <!-- Crisp drop shadow for the binder tabs to lift off the header -->
+    <filter id="ringShadow" x="-30%" y="-20%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="1" stdDeviation="0.5" flood-color="#002d30" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Calendar Body -->
+  <rect x="2" y="6" width="28" height="24" rx="4.5" fill="url(#bodyGrad)" />
+
+  <!-- Accent Header -->
+  <path d="M2 10.5 A4.5 4.5 0 0 1 6.5 6 h19 A4.5 4.5 0 0 1 30 10.5 V12 H2 Z" fill="#006368" />
+
+  <!-- Top Binder Rings (White for high contrast) -->
+  <g filter="url(#ringShadow)">
+    <rect x="7.5" y="2" width="3.5" height="7.5" rx="1.75" fill="#ffffff" />
+    <rect x="21" y="2" width="3.5" height="7.5" rx="1.75" fill="#ffffff" />
+  </g>
+
+  <!-- Clean, High-Contrast White Checkmark -->
+  <path
+    d="M8.5 19.5 L13.5 24.5 L24 14"
+    fill="none"
+    stroke="#ffffff"
+    stroke-width="3.6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+</svg>

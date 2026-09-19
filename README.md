@@ -14,3 +14,17 @@ Foreigners staying in Thailand long-term must report their current address to Im
 - **Light/dark theme** — a theme switcher that respects your preference.
 
 All dates are calculated locally in your browser — nothing is sent anywhere or stored.
+
+## Screenshots
+
+**Blank state** — the starting screen before any date is entered.
+
+![Blank state](public/images/intro-blank.png)
+
+**Entry date input** — enter the date you last entered Thailand and the app calculates your due date, status, key dates, and timeline.
+
+![Entry date input](public/images/entry-date-normal.png)
+
+**Due date input** — already know your due date from your TM.47 receipt? Enter it directly instead.
+
+![Due date input](public/images/due-date-input.png)
