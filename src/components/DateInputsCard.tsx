@@ -1,4 +1,6 @@
+import { parseDate } from '@internationalized/date'
 import { Card } from './Card'
+import { DatePicker } from './aria/DatePicker'
 
 interface DateInputsCardProps {
   entryDate: string
@@ -7,12 +9,6 @@ interface DateInputsCardProps {
   onDueDateInputChange: (value: string) => void
   onClear: () => void
 }
-
-const inputClassName =
-  'w-full rounded-[14px] border border-ink/12 bg-mist/60 px-3.5 py-3 font-sans text-sm text-ink outline-none dark:border-mist/15 dark:bg-slate/30 dark:text-mist'
-
-const labelClassName =
-  'text-xs font-semibold tracking-wide text-ink/60 uppercase dark:text-mist/60'
 
 export function DateInputsCard({
   entryDate,
@@ -27,35 +23,21 @@ export function DateInputsCard({
   return (
     <Card title="Your dates">
       <div className="flex flex-col gap-3.5">
-        <div className="flex flex-col gap-1.5">
-          <label htmlFor="entryDate" className={labelClassName}>
-            Date you entered Thailand
-          </label>
-          <input
-            id="entryDate"
-            type="date"
-            value={entryDate}
-            disabled={dueFilled}
-            onChange={(e) => onEntryDateChange(e.target.value)}
-            className={inputClassName}
-          />
-        </div>
+        <DatePicker
+          label="Date you entered Thailand"
+          value={entryDate ? parseDate(entryDate) : null}
+          onChange={(date) => onEntryDateChange(date ? date.toString() : '')}
+          isDisabled={dueFilled}
+        />
         <div className="text-center text-xs font-semibold tracking-wider text-ink/60 uppercase dark:text-mist/60">
           or
         </div>
-        <div className="flex flex-col gap-1.5">
-          <label htmlFor="dueDateInput" className={labelClassName}>
-            Due date (from your TM.47 receipt)
-          </label>
-          <input
-            id="dueDateInput"
-            type="date"
-            value={dueDateInput}
-            disabled={entryFilled}
-            onChange={(e) => onDueDateInputChange(e.target.value)}
-            className={inputClassName}
-          />
-        </div>
+        <DatePicker
+          label="Due date (from your TM.47 receipt)"
+          value={dueDateInput ? parseDate(dueDateInput) : null}
+          onChange={(date) => onDueDateInputChange(date ? date.toString() : '')}
+          isDisabled={entryFilled}
+        />
       </div>
       <div className="mt-[18px] flex justify-end">
         <button
