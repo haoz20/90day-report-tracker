@@ -20,13 +20,13 @@ const cellClassName = [
   'data-[disabled]:pointer-events-none data-[disabled]:opacity-30',
   'data-[unavailable]:pointer-events-none data-[unavailable]:text-ink/30 data-[unavailable]:line-through',
   "[&[data-today]:not([data-selected])]:ring-1 [&[data-today]:not([data-selected])]:ring-ink/40",
-  'data-[selected]:bg-ink data-[selected]:font-semibold data-[selected]:text-teal',
-  'data-[focus-visible]:ring-2 data-[focus-visible]:ring-ink data-[focus-visible]:ring-offset-2 data-[focus-visible]:ring-offset-surface-light',
-  'dark:text-teal dark:data-[hovered]:bg-teal/10 dark:data-[outside-month]:text-teal/30',
-  'dark:data-[unavailable]:text-teal/30',
-  "dark:[&[data-today]:not([data-selected])]:ring-teal/40",
-  'dark:data-[selected]:bg-teal dark:data-[selected]:text-ink',
-  'dark:data-[focus-visible]:ring-teal dark:data-[focus-visible]:ring-offset-surface-dark',
+  'data-[selected]:bg-accent data-[selected]:font-semibold data-[selected]:text-ink',
+  'data-[focus-visible]:ring-2 data-[focus-visible]:ring-ink data-[focus-visible]:ring-offset-2 data-[focus-visible]:ring-offset-mist',
+  'dark:text-mist dark:data-[hovered]:bg-mist/10 dark:data-[outside-month]:text-mist/30',
+  'dark:data-[unavailable]:text-mist/30',
+  "dark:[&[data-today]:not([data-selected])]:ring-mist/40",
+  'dark:data-[selected]:bg-accent dark:data-[selected]:text-ink',
+  'dark:data-[focus-visible]:ring-accent dark:data-[focus-visible]:ring-offset-slate',
 ].join(' ')
 
 export function Calendar<T extends DateValue>(props: Readonly<CalendarProps<T>>) {
@@ -39,7 +39,7 @@ export function Calendar<T extends DateValue>(props: Readonly<CalendarProps<T>>)
         <CalendarNavButton slot="previous">
           <ChevronLeftIcon className="h-4 w-4" />
         </CalendarNavButton>
-        <Heading className="text-sm font-semibold text-ink dark:text-teal" />
+        <Heading className="text-sm font-semibold text-ink dark:text-mist" />
         <CalendarNavButton slot="next">
           <ChevronRightIcon className="h-4 w-4" />
         </CalendarNavButton>
@@ -47,7 +47,7 @@ export function Calendar<T extends DateValue>(props: Readonly<CalendarProps<T>>)
       <CalendarGrid className="w-full border-collapse">
         <CalendarGridHeader>
           {(day) => (
-            <CalendarHeaderCell className="pb-2 text-xs font-semibold text-muted-light dark:text-muted-dark">
+            <CalendarHeaderCell className="pb-2 text-xs font-semibold text-ink/60 dark:text-mist/60">
               {day}
             </CalendarHeaderCell>
           )}

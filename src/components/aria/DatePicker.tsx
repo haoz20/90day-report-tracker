@@ -21,8 +21,9 @@ export interface DatePickerProps<T extends DateValue> extends AriaDatePickerProp
 /**
  * Shareable date picker built on react-aria-components. Drop it in anywhere a
  * calendar-backed date field is needed — styling lives entirely in this
- * folder's theme tokens (`--color-teal` / `--color-ink`), so it stays in sync
- * with the app's light/dark palette automatically.
+ * folder's theme tokens (`--color-accent` / `--color-ink` / `--color-mist` /
+ * `--color-slate`), so it stays in sync with the app's light/dark palette
+ * automatically.
  */
 export function DatePicker<T extends DateValue>({
   label,

@@ -21,7 +21,7 @@ function DateSegment({ segment }: Readonly<{ segment: DateSegmentProps['segment'
   return (
     <AriaDateSegment
       segment={segment}
-      className="rounded-sm px-0.5 tabular-nums text-ink outline-none data-[focused]:bg-ink data-[focused]:text-teal data-[placeholder]:text-muted-light data-[type=literal]:px-0 dark:text-teal dark:data-[focused]:bg-teal dark:data-[focused]:text-ink dark:data-[placeholder]:text-muted-dark"
+      className="rounded-sm px-0.5 tabular-nums text-ink outline-none data-[placeholder]:text-ink/40 data-[focused]:bg-accent data-[focused]:text-ink data-[focused]:data-[placeholder]:text-ink data-[type=literal]:px-0 dark:text-mist dark:data-[placeholder]:text-mist/40 dark:data-[focused]:bg-accent dark:data-[focused]:text-ink dark:data-[focused]:data-[placeholder]:text-ink"
     />
   )
 }

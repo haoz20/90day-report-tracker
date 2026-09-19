@@ -15,10 +15,13 @@ export interface ReportWindow {
 
 const EARLY_WINDOW_DAYS = 15
 const LATE_WINDOW_DAYS = 7
-const REPORT_CYCLE_DAYS = 90
+// The entry date counts as day 1 of the 90-day cycle, so the due date is
+// 89 days after entry (e.g. entering July 17 gives a due date of Oct 14,
+// not Oct 15).
+const REPORT_CYCLE_DAYS = 89
 
 export const TONE_COLORS: Record<ReportTone, string> = {
-  early: '#00A19C',
+  early: '#00ADB5',
   ontime: '#4fbf8f',
   due: '#4fbf8f',
   late: '#e8a33d',
@@ -35,8 +38,12 @@ export function computeReportWindow(dueDate: Date | null): ReportWindow | null {
   if (!dueDate) return null
   return {
     dueDate,
-    earlyOpen: addDays(dueDate, -EARLY_WINDOW_DAYS),
-    lateEnd: addDays(dueDate, LATE_WINDOW_DAYS),
+    // The due date is itself counted as one of the window's days — the
+    // last day of the early window and the first day of the late window —
+    // so each window spans exactly its named number of days inclusive of
+    // the due date (e.g. a 15-day early window opens 14 days before it).
+    earlyOpen: addDays(dueDate, -(EARLY_WINDOW_DAYS - 1)),
+    lateEnd: addDays(dueDate, LATE_WINDOW_DAYS - 1),
   }
 }
 

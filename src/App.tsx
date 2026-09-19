@@ -29,13 +29,13 @@ function App() {
   }, [])
 
   return (
-    <div className="min-h-screen w-full bg-teal px-5 pt-8 pb-[60px] font-sans text-ink antialiased transition-colors dark:bg-ink dark:text-teal">
+    <div className="app-shell min-h-screen w-full px-5 pt-8 pb-[60px] font-sans text-ink antialiased transition-colors dark:text-mist">
       <div className="relative mx-auto max-w-[620px]">
         <ThemeSwitcher mode={mode} onChange={setModeState} />
 
         <header className="mb-7 pt-14 text-center">
           <h1 className="mb-2 text-2xl font-semibold tracking-tight">Thailand 90-Day Report Tracker</h1>
-          <p className="m-0 text-sm leading-relaxed text-muted-light dark:text-muted-dark">
+          <p className="m-0 text-sm leading-relaxed text-ink/60 dark:text-mist/60">
             Calculate and track your Thailand 90-day address reporting deadline.
           </p>
         </header>

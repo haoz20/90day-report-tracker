@@ -3,45 +3,10 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-teal: #00a19c;
-  --color-ink: #111111;
-
-  /* Card/panel surfaces: kept far enough from teal/ink's own luminance that
-     full-opacity ink/teal text on them clears WCAG AA with margin (see
-     muted-* below for the secondary-text budget this leaves). */
-  --color-surface-light: color-mix(in srgb, var(--color-teal) 15%, white 85%);
-  --color-surface-dark: color-mix(in srgb, var(--color-ink) 97%, white 3%);
-
-  /* Secondary/muted text tokens. These are solid colors, not opacity
-     tricks on ink/teal — an alpha-reduced ink or teal drops below 4.5:1
-     against the teal/ink page background well before it looks "muted". */
-  --color-muted-light: #0e2726;
-  --color-muted-dark: #009490;
-
-  --font-sans: "IBM Plex Serif", ui-serif, Georgia, serif;
-}
-
-/* Plain custom properties (not @theme) so the SAME variable name resolves
-   differently once `.dark` is toggled on an ancestor — needed for inline
-   `style={{ color: 'var(--tone-early-text)' }}` usage, which can't use
-   Tailwind's `dark:` class variant. The vivid TONE_COLORS in
-   reportStatus.ts stay saturated for decorative use (timeline bars,
-   banner tint) but fail AA as text color on the surfaces above, so text
-   rendering uses these darker/lighter per-theme variants instead. */
-:root {
-  --tone-early-text: #007470;
-  --tone-ontime-text: #2f7356;
-  --tone-due-text: #2f7356;
-  --tone-late-text: #875f23;
-  --tone-overdue-text: #ae463f;
-}
-
-.dark {
-  --tone-early-text: #00a19c;
-  --tone-ontime-text: #4fbf8f;
-  --tone-due-text: #4fbf8f;
-  --tone-late-text: #e8a33d;
-  --tone-overdue-text: #da5a53;
+  --color-ink: #222831;
+  --color-slate: #393e46;
+  --color-accent: #00adb5;
+  --color-mist: #eeeeee;
 }
 
 :root {
@@ -51,4 +16,16 @@
 body {
   margin: 0;
   min-height: 100vh;
+}
+
+.app-shell {
+  background:
+    radial-gradient(circle at 15% 0%, color-mix(in srgb, var(--color-accent) 14%, transparent), transparent 55%),
+    linear-gradient(135deg, var(--color-mist) 0%, #dcdcdc 50%, var(--color-mist) 100%);
+}
+
+.dark .app-shell {
+  background:
+    radial-gradient(circle at 15% 0%, color-mix(in srgb, var(--color-accent) 20%, transparent), transparent 55%),
+    linear-gradient(135deg, var(--color-ink) 0%, var(--color-slate) 55%, var(--color-ink) 100%);
 }

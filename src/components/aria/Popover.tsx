@@ -8,7 +8,7 @@ export function Popover(props: Readonly<PopoverProps>) {
       offset={8}
       className={composeTailwindRenderProps(
         props.className,
-        'rounded-[18px] border border-ink/18 bg-surface-light p-3 text-ink shadow-[0_12px_28px_rgba(0,0,0,0.22)] outline-none dark:border-teal/18 dark:bg-surface-dark dark:text-teal',
+        'rounded-[18px] border border-ink/8 bg-mist/90 p-3 text-ink shadow-[0_12px_28px_rgba(0,0,0,0.22)] backdrop-blur-xl backdrop-saturate-150 outline-none dark:border-mist/12 dark:bg-slate/90 dark:text-mist',
       )}
     />
   )

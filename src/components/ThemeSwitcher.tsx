@@ -9,7 +9,7 @@ interface ThemeSwitcherProps {
 
 export function ThemeSwitcher({ mode, onChange }: ThemeSwitcherProps) {
   return (
-    <div className="absolute top-0 right-0 flex gap-1 rounded-full border border-ink/18 bg-surface-light p-1 dark:border-teal/18 dark:bg-surface-dark">
+    <div className="absolute top-0 right-0 flex gap-1 rounded-full border border-ink/8 bg-mist/55 p-1 backdrop-blur-xl backdrop-saturate-150 dark:border-mist/12 dark:bg-slate/40">
       {OPTIONS.map((option) => (
         <button
           key={option}
@@ -17,8 +17,8 @@ export function ThemeSwitcher({ mode, onChange }: ThemeSwitcherProps) {
           onClick={() => onChange(option)}
           className={`rounded-full px-3 py-1.5 font-sans text-xs font-semibold capitalize transition-colors ${
             mode === option
-              ? 'bg-white text-ink shadow-[0_1px_4px_rgba(0,0,0,0.25)] ring-1 ring-ink/15 dark:bg-teal dark:text-ink dark:shadow-none dark:ring-0'
-              : 'text-ink/75 hover:text-ink dark:text-teal/75 dark:hover:text-teal'
+              ? 'bg-accent text-ink'
+              : 'text-ink/60 hover:text-ink dark:text-mist/60 dark:hover:text-mist'
           }`}
         >
           {option}
